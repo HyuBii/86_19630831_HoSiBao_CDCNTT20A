@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <link rel="stylesheet" href="./CSS/bootstrap.min.css" />
+    <script src="./JS/jquery-3.6.0.min.js"></script>
+    <script src="./JS/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function()
+      {
+          function kiemtrama(){
+              var re =/^[0-9]{10}$/;
+              if($("#txtmasv").val()=="") {
+                  $("#tbmasv").html("Bắt buộc");
+                  return false;
+              }
+              if(!re.test($("#txtmasv").val()))
+              {
+                  $("#tbmasv").html("chỉ dùng 10 chữ số");
+                  return false;
+              }
+              else {
+                  $("#tbmasv").html("(*)");
+                  return true;
+              }
+          }
+          $("#txtmasv").blur(kiemtrama);
+          function kiemtraten(){
+              var re =/^[A-Z]{1}\[a-z]$/;
+              if($("#txtten").val()=="") {
+                  $("#tbten").html("Bắt buộc");
+                  return false;
+              }
+              if(!re.test($("#txtten").val()))
+              {
+                  $("#tbten").html("chỉ dùng chữ hoa đầu từ");
+                  return false;
+              }
+              else {
+                  $("#tbten").html("(*)");
+                  return true;
+              }
+          }
+          $("#txtten").blur(kiemtraten);
+          function kiemtrangay(
+
+          )
+      })
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <img src="./img/logo.PNG" alt="" srcset="" />
+        </div>
+        <div class="col-md-10 text-center">
+          <h3>ĐOÀN THANH NIÊN THÀNH PHỐ HỒ CHÍ MINH</h3>
+          <h4 class="text-danger">
+            Đoàn thanh niên trường đại học Công Nghiệp
+            TP.HCM
+          </h4>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <nav
+          class="navbar navbar-expand-md col-md-12 justify-content"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a href="#" class="nav-link">Trang chủ</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Đoàn thể</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Sự kiện</a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="#"
+                class="nav-link"
+                id="form"
+                data-target="#mymodal"
+                data-toggle="modal"
+                >Đăng ký</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <aside>
+            <img
+              src="./img/ngayhoithanhnien.JPG"
+              alt=""
+              srcset=""
+              class="rounded-circle"
+              width="100%"
+            />
+          </aside>
+        </div>
+        <div class="col-md-8">
+          <section style="padding-left: 100px">
+            <h1>TIN NỔI BẬT</h1>
+            <ul class="bg-info">
+              <li>Mùa hè xanh</li>
+              <li>Thanh niên tình nguyện</li>
+              <li>Tấm lòng vàng</li>
+              <li>Hiến máu nhân đạo</li>
+              <li>Bảo Vệ môi trường sạch</li>
+              <li>Thi đua lập thành tích chào mừng 26/3</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="table-responsive">
+          <table class="table table-strieped">
+            <h4 class="text-center">
+              Danh sách đăng ký hoạt động mùa hè xanh
+            </h4>
+            <tr>
+              <th>STT</th>
+              <th>MASV</th>
+              <th>TenSV</th>
+              <th>Ngày tham gia</th>
+              <th>Email</th>
+              <th>SĐT</th>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="footer bg-info">
+        <p>
+          @ 2021-2022 Đoàn thanh niên - Trường đại học Công
+          Nghiệp TP.Hồ Chí Minh
+        </p>
+      </div>
+      <div class="modal fade" id="mymodal" role="dialog">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+              >
+                &times;
+              </button>
+              <h4 style="text-align: center">
+                THÔNG TIN ĐĂNG KÝ
+              </h4>
+            </div>
+            <div class="modal-body">
+              <form
+                action=""
+                role="form"
+                class="form-horizontal"
+              >
+                <div class="row form-group">
+                  <label
+                    for="txtmasv"
+                    class="control-label col-xs-3"
+                    >Mã SV:</label
+                  >
+                  <div class="col-md-9">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="txtmasv"
+                    />
+                    <span id="tbmasv" class="text-danger"
+                      >(*)</span
+                    >
+                  </div>
+                </div>
+                <div class="row form-group">
+                  <label
+                    for="txten"
+                    class="control-label col-xs-3"
+                    >Họ Tên:</label
+                  >
+                  <div class="col-md-9">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="txtten"
+                    />
+                    <span id="tbten" class="text-danger"
+                      >(*)</span
+                    >
+                  </div>
+                </div>
+                <div class="row form-group">
+                  <label
+                    for="txtntg"
+                    class="control-label col-xs-3"
+                    >Ngày Tham gia:</label
+                  >
+                  <div class="col-md-9">
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="txtntg"
+                    />
+                    <span id="tbngay" class="text-danger"
+                      >(*)</span
+                    >
+                  </div>
+                </div>
+                <div class="row form-group">
+                  <label
+                    for="txtmail"
+                    class="control-label col-xs-3"
+                    >Email:</label
+                  >
+                  <div class="col-md-9">
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="txtmail"
+                    />
+                    <span id="tbemail" class="text-danger"
+                      >(*)</span
+                    >
+                  </div>
+                </div>
+                <div class="row form-group">
+                  <label
+                    for="txtsdt"
+                    class="control-label col-xs-3"
+                    >Số điện thoại:</label
+                  >
+                  <div class="col-md-9">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="txtsdt"
+                    />
+                    <span id="tbsdt" class="text-danger"
+                      >(*)</span
+                    >
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
